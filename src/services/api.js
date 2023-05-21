@@ -6,7 +6,7 @@ export const fetchTweets = async (page, abort) => {
   try {
     const { data } = await axios.get(`/tweets`, {
       signal: abort.signal,
-      params: { p: page, l: 12 },
+      params: { p: page, l: 3 },
     });
     return data;
   } catch (error) {}

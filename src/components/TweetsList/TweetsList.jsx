@@ -1,34 +1,25 @@
 import { useEffect, useState } from 'react';
-import { fetchTweets } from 'services/api';
 import { TweetInfo } from './TweetInfo/TweetInfo';
 import { CardList } from './TweetsList.styled';
+import { lsFollowers } from 'services/storage';
 
-export const TweetsList = ({ page }) => {
-  const [data, setData] = useState([]);
+export const TweetsList = ({ data }) => {
+  const [tweets, setTweets] = useState([]);
 
   useEffect(() => {
-    const abortController = new AbortController();
+    setTweets(lsFollowers.unit(data));
+  }, [data]);
 
-    async function fetch(page, abortController) {
-      const fetchData = await fetchTweets(page, abortController);
-      setData(prev => {
-        if (page === 1) {
-          return fetchData;
-        } else {
-          return [...prev, ...fetchData];
-        }
-      });
-    }
-
-    fetch(page, abortController);
-  }, [page]);
+  const handleClick = () => {
+    setTweets(lsFollowers.unit(data));
+  };
 
   return (
     <CardList>
-      {data.map(elem => {
+      {tweets.map(elem => {
         return (
           <li key={elem.id}>
-            <TweetInfo info={elem} />
+            <TweetInfo info={elem} onClick={handleClick} />
           </li>
         );
       })}

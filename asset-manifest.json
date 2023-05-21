@@ -1,14 +1,13 @@
 {
   "files": {
     "main.css": "/test-task-tweets/static/css/main.7acaea2f.css",
-    "main.js": "/test-task-tweets/static/js/main.75d86fe3.js",
-    "static/media/follow.jpg": "/test-task-tweets/static/media/follow.7ab2958bf7d5b200881e.jpg",
+    "main.js": "/test-task-tweets/static/js/main.339c572e.js",
     "index.html": "/test-task-tweets/index.html",
     "main.7acaea2f.css.map": "/test-task-tweets/static/css/main.7acaea2f.css.map",
-    "main.75d86fe3.js.map": "/test-task-tweets/static/js/main.75d86fe3.js.map"
+    "main.339c572e.js.map": "/test-task-tweets/static/js/main.339c572e.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.75d86fe3.js"
+    "static/js/main.339c572e.js"
   ]
 }
